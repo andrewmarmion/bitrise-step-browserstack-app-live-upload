@@ -30,13 +30,13 @@ host_os_tags:
 # https://github.com/bitrise-io/bitrise/blob/master/_docs/step-development-guideline.md
 #
 # project_type_tags:
-#   - ios
+  - ios
 #   - macos
-#   - android
-#   - xamarin
-#   - react-native
-#   - cordova
-#   - ionic
+  - android
+  - xamarin
+  - react-native
+  - cordova
+  - ionic
 
 # Type tags are used for categorizing steps, for easier step discovery in Step Libraries.
 # You can find more information about type tags in the Step Development Guideline:
@@ -64,24 +64,30 @@ toolkit:
 
 
 inputs:
-  - example_step_input: Default Value - you can leave this empty if you want to
+  - apk_ipa_filepath: 
     opts:
-      title: "Example Step Input"
-      summary: Summary. No more than 2-3 sentences.
+      title: "Location of the IPA or APK"
+      summary: Location of the IPA or APK that you want to upload.
       description: |
-        Description of this input.
-
-        Can be Markdown formatted text.
+        The app file you want to upload to BrowserStack, usually $BITRISE\_APK\_PATH
+        or $BITRISE\_IPA\_PATH
       is_expand: true
       is_required: true
-      value_options: []
-
-outputs:
-  - EXAMPLE_STEP_OUTPUT:
+  - browserstack_username: $BROWSERSTACK_USERNAME
     opts:
-      title: "Example Step Output"
-      summary: Summary. No more than 2-3 sentences.
+      title: "Browserstack Username"
+      summary: The username you use to log into Browserstack
       description: |
-        Description of this output.
-
-        Can be Markdown formatted text.
+        The username you use to log into Browserstack
+      is_expand: true
+      is_required: true
+      is_sensitive: true
+  - browserstack_access_key: $BROWSERSTACK_ACCESS_KEY
+    opts:
+      title: "Browserstack Access Key"
+      summary: The access key for your Browserstack account.
+      description: |
+        The access key for your Browserstack account.
+      is_expand: true
+      is_required: true
+      is_sensitive: true
