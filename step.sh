@@ -1,16 +1,16 @@
 #!/bin/bash
 
-if [ ! -e $browserstack_username ]; then
+if [ -z "$browserstack_username" ]; then
   echo "Please provide your Browserstack Username"
   exit 1
 fi
 
-if [ ! -e $browserstack_access_key ]; then
+if [ -z "$browserstack_access_key" ]; then
   echo "Please provide the location of your GoogleService-Info.plist"
   exit 1
 fi
 
-if [ ! -e $apk_ipa_filepath ]; then
+if [ -z "$apk_ipa_filepath" ]; then
   echo "Please provide the path for the IPA or APK that you wish to upload."
   echo "For IPA it is usually \$BITRISE_IPA_PATH"
   echo "For APK it is usually \$BITRISE_APK_PATH"
