@@ -6,7 +6,7 @@ if [ -z "$browserstack_username" ]; then
 fi
 
 if [ -z "$browserstack_access_key" ]; then
-  echo "Please provide the location of your GoogleService-Info.plist"
+  echo "Please provide your Browserstack Access Key"
   exit 1
 fi
 
