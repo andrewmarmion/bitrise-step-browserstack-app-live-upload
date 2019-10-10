@@ -12,8 +12,7 @@ title: |-
 summary: |
   Uploads your APK or IPA to Browserstack for interactive app testing.
 description: |
-  Uploads your APK or IPA to Browserstack for interactive app testing. 
-  You can find your username and access key at https://www.browserstack.com/app-live/rest-api
+  Uploads your APK or IPA to Browserstack for interactive app testing. You can find your username and access key at https://www.browserstack.com/app-live/rest-api
 website: https://github.com/andrewmarmion/bitrise-step-browserstack-app-live-upload
 source_code_url: https://github.com/andrewmarmion/bitrise-step-browserstack-app-live-upload
 support_url: https://github.com/andrewmarmion/bitrise-step-browserstack-app-live-upload/issues
@@ -30,7 +29,7 @@ host_os_tags:
 # You can find more information about project type tags in the Step Development Guideline:
 # https://github.com/bitrise-io/bitrise/blob/master/_docs/step-development-guideline.md
 #
-# project_type_tags:
+project_type_tags:
   - ios
 #   - macos
   - android
@@ -38,6 +37,7 @@ host_os_tags:
   - react-native
   - cordova
   - ionic
+  - flutter
 
 # Type tags are used for categorizing steps, for easier step discovery in Step Libraries.
 # You can find more information about type tags in the Step Development Guideline:
@@ -63,16 +63,15 @@ inputs:
       title: "Location of the IPA or APK"
       summary: Location of the IPA or APK that you want to upload.
       description: |
-        The app file you want to upload to BrowserStack, usually $BITRISE\_APK\_PATH
-        or $BITRISE\_IPA\_PATH
+        The app file you want to upload to BrowserStack, usually $BITRISE\_APK\_PATH or $BITRISE\_IPA\_PATH.
       is_expand: true
       is_required: true
   - browserstack_username:
     opts:
       title: "Browserstack Username"
-      summary: The username you use to log into Browserstack
+      summary: The username you use to log into Browserstack.
       description: |
-        The username you use to log into Browserstack
+        The username you use to log into Browserstack.
       is_expand: true
       is_required: true
       is_sensitive: true
